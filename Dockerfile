@@ -21,8 +21,10 @@ ENV TRANSFER_TOKEN_SALT=build-placeholder-transfer-token-salt
 
 RUN npm run build
 
-# Create uploads dir AFTER build so it's not overwritten by the build step
-RUN mkdir -p /app/public/uploads && chmod 755 /app/public/uploads
+# Ensure uploads dir exists with correct permissions and ownership
+RUN mkdir -p /app/public/uploads && chown -R node:node /app/public/uploads && chmod 755 /app/public/uploads
+
+USER node
 
 EXPOSE 1337
 
