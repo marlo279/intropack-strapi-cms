@@ -9,6 +9,8 @@ RUN npm install --legacy-peer-deps
 
 COPY . .
 
+RUN mkdir -p /app/public/uploads
+
 # Strapi requires these env vars at build time to compile the admin panel.
 # Railway only injects real env vars at runtime, so we use placeholders here.
 # The real values from Railway will override these at container startup.
