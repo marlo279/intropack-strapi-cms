@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": "Verpakkingsmachines in de catalogus"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "brand": {
+      "type": "enumeration",
+      "enum": ["IMH", "Polystar", "Unipack"],
+      "required": true
+    },
+    "machineType": {
+      "type": "enumeration",
+      "enum": [
+        "Sealmachines",
+        "Verpakkingsmachines",
+        "Vulmachines",
+        "Transportbanden",
+        "Vacuümmachines",
+        "Draaitafel",
+        "Overig"
+      ],
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "features": {
+      "type": "json",
+      "description": "Lijst van kenmerken (array van strings)"
+    },
+    "specs": {
+      "type": "json",
+      "description": "Technische specificaties als key-value object"
+    },
+    "categories": {
+      "type": "json",
+      "description": "Extra categorieën (array van strings)"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "imageUrls": {
+      "type": "json",
+      "description": "Externe afbeelding URLs (tijdelijk, totdat afbeeldingen geüpload zijn)"
+    },
+    "metaDescription": {
+      "type": "string"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

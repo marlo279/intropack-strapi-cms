@@ -1,0 +1,2 @@
+const { factories } = require("@strapi/strapi");
+module.exports = factories.createCoreController("api::news-article.news-article");

@@ -1,0 +1,11 @@
+node_modules/
+.tmp/
+dist/
+.cache/
+build/
+*.log
+.env
+.env.local
+strapi-railway.tar.gz
+deploy-railway.js
+start-strapi.bat

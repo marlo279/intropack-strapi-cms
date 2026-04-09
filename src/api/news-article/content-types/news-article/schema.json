@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_articles",
+  "info": {
+    "singularName": "news-article",
+    "pluralName": "news-articles",
+    "displayName": "Nieuwsbericht",
+    "description": "Nieuws en updates van Intropack"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "excerpt": {
+      "type": "text",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Bedrijfsnieuws",
+        "Producten",
+        "Evenementen",
+        "Overig"
+      ],
+      "default": "Overig"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "imageUrl": {
+      "type": "string",
+      "description": "Externe afbeelding URL (tijdelijk)"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

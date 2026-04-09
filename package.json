@@ -1,0 +1,35 @@
+{
+  "name": "intropack-strapi-cms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Intropack CMS — powered by Strapi",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-users-permissions": "5.42.0",
+    "@strapi/strapi": "5.42.0",
+    "better-sqlite3": "11.9.1",
+    "pg": "8.13.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.28.0",
+    "styled-components": "^6.3.12"
+  },
+  "devDependencies": {
+    "@types/node": "22.5.0",
+    "archiver": "^7.0.1",
+    "typescript": "5.6.3"
+  },
+  "strapi": {
+    "uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "UNLICENSED"
+}
