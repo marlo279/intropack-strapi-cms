@@ -19,6 +19,9 @@ module.exports = ({ env }) => {
         connectionString: env("DATABASE_URL"),
         ssl: env("DATABASE_SSL", "false") === "true" ? { rejectUnauthorized: false } : false,
       },
+      migrations: {
+        lock: null,
+      },
     },
   };
 
