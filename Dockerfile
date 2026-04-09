@@ -26,8 +26,12 @@ RUN mkdir -p /app/public/uploads /app/database/migrations && \
     chown -R node:node /app/public/uploads /app/database/migrations && \
     chmod 755 /app/public/uploads /app/database/migrations
 
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
 USER node
 
 EXPOSE 1337
 
+ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["npm", "run", "start"]
