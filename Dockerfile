@@ -21,8 +21,10 @@ ENV TRANSFER_TOKEN_SALT=build-placeholder-transfer-token-salt
 
 RUN npm run build
 
-# Ensure uploads dir exists with correct permissions and ownership
-RUN mkdir -p /app/public/uploads && chown -R node:node /app/public/uploads && chmod 755 /app/public/uploads
+# Ensure uploads and database dirs exist with correct permissions and ownership
+RUN mkdir -p /app/public/uploads /app/database/migrations && \
+    chown -R node:node /app/public/uploads /app/database/migrations && \
+    chmod 755 /app/public/uploads /app/database/migrations
 
 USER node
 
