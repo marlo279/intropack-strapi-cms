@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:18-alpine
 
 RUN apk add --no-cache python3 make g++
 
@@ -22,8 +22,8 @@ ENV TRANSFER_TOKEN_SALT=build-placeholder-transfer-token-salt
 RUN npm run build
 
 RUN mkdir -p /app/public/uploads /app/database/migrations && \
-    chown -R node:node /app/public/uploads /app/database/migrations && \
-    chmod 755 /app/public/uploads /app/database/migrations
+    chown -R node:node /app && \
+    chmod -R 755 /app
 
 USER node
 

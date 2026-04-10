@@ -3,7 +3,7 @@ builder = "dockerfile"
 
 [deploy]
 startCommand = "npm run start"
-healthcheckPath = "/admin"
+healthcheckPath = "/_health"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 3
