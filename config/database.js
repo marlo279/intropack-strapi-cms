@@ -17,10 +17,11 @@ module.exports = ({ env }) => {
     postgres: {
       connection: {
         connectionString: env("DATABASE_URL"),
-        ssl: env("DATABASE_SSL", "false") === "true" ? { rejectUnauthorized: false } : false,
+        ssl: { rejectUnauthorized: false },
       },
-      migrations: {
-        lock: null,
+      pool: {
+        min: 2,
+        max: 10,
       },
     },
   };
@@ -29,7 +30,7 @@ module.exports = ({ env }) => {
     connection: {
       client,
       ...connections[client],
-      acquireConnectionTimeout: env("DATABASE_CONNECTION_TIMEOUT", "60000"),
+      acquireConnectionTimeout: parseInt(env("DATABASE_CONNECTION_TIMEOUT", "60000"), 10),
     },
   };
 };
